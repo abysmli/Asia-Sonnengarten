@@ -5,10 +5,6 @@ Booking Form
 $(function () {
     "use strict";
     loadGoogleMap();
-    if ($('#video').length != 0) {
-        // Pause video before the page is ready
-        $('#video').get(0).pause();
-    }
     // use jQuery Bootstrap Validation to validate the booking form input
     $("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
@@ -23,10 +19,12 @@ $(function () {
             var phone = $("input#phone1").val();
             var reservDate = $('input#reserv_date1').val();
             var numGuests = $('input#numb_guests1').val();
+            var _csrf = $('input#_csrf').val();
             $.ajax({
                 url: "/",
                 type: "POST",
                 data: {
+                    _csrf: _csrf,
                     name: name,
                     phone: phone,
                     email: email,
