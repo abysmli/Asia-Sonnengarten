@@ -83,7 +83,7 @@ function loadGoogleMap() {
         'icon': 'assets/images/map_pin.png'
     };
 
-    if ($('#restaurant_map').length) {
+    if ($('#homepage_map').length) {
 
         var map;
         var mapstyles = [{ "stylers": [{ "saturation": -100 }] }];
@@ -103,10 +103,6 @@ function loadGoogleMap() {
             scrollwheel: false,
             styles: mapstyles
         };
-
-        // Create new Google Map object for pop-up restaurant windows
-        map = new google.maps.Map(document.getElementById("restaurant_map"), mapOptions);
-
         // Create new Google Map object for full width map section on homepage
         map = new google.maps.Map(document.getElementById("homepage_map"), mapOptions);
 
